@@ -3,8 +3,6 @@
 > **Description**: A fully autonomous quadcopter system capable of GPS-denied navigation using Visual-Inertial Odometry (VIO). The pipeline integrates A* graph-search path planning, cubic-spline trajectory generation, an SE(3) geometric nonlinear controller, and a stereo-visual-inertial state estimator — validated on a real Crazyflie 2.0 with Vicon motion capture and stress-tested through six obstacle-filled simulation environments, including an extra local replanning module.
 
 [![Course](https://img.shields.io/badge/MEAM%20620-Advanced%20Robotics-darkblue?style=for-the-badge)](https://github.com)
-[![Result](https://img.shields.io/badge/Status-Fully%20Validated-gold?style=for-the-badge)](https://github.com)
-[![Extra Credit](https://img.shields.io/badge/Extra%20Credit-Local%20Replanning-green?style=for-the-badge)](https://github.com)
 [![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)](https://www.python.org/)
 [![ROS](https://img.shields.io/badge/ROS-Noetic-22314E?style=for-the-badge&logo=ros)](https://www.ros.org/)
 
