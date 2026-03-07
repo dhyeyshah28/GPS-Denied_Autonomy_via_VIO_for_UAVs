@@ -13,6 +13,16 @@ Planning → Trajectory Generation → SE(3) Control → VIO State Estimation �
 
 </div>
 
+<div align="center">
+
+<p float="left">
+<img src="Images/quad.png" alt="Main Robot Image" width="45%" />
+  <img src="Images/maze_sim_2.png" alt="Robot in battle Arena" width="42%" />
+</p>
+
+</div>
+
+
 ---
 
 ## 📋 Table of Contents
@@ -159,6 +169,15 @@ The controller was tuned and validated on a real Crazyflie 2.0 quadcopter inside
 ---
 
 ## 🔬 Technical Approach
+
+<div align="center">
+
+<p float="left">
+<img src="Images/pose_graphs.png" alt="Main Robot Image" width="45%" />
+  <img src="Images/maze_sim_1.png" alt="Robot in battle Arena" width="42%" />
+</p>
+
+</div>
 
 ### 1. Path Planning (A\*)
 
@@ -581,6 +600,15 @@ return FAILURE
 
 ## 🛸 Hardware Validation
 
+<div align="center">
+
+<p float="left">
+<img src="Images/lab_maze.png" alt="Main Robot Image" width="45%" />
+  <img src="Images/pos_vel.png" alt="Robot in battle Arena" width="45%" />
+</p>
+
+</div>
+
 ### Lab Setup
 
 | Component         | Details                                          |
@@ -622,10 +650,6 @@ return FAILURE
    - Zero-velocity boundary conditions ensured smooth takeoff and landing.
    - C² continuity kept acceleration bounded — critical for a quadrotor where acceleration maps directly to tilt angle.
 
-5. **SE(3) Controller Robustness**
-   - The geometric controller handled VIO noise gracefully without re-tuning.
-   - Gains validated on hardware transferred directly into the closed-loop VIO system.
-
 ### ⚠️ Challenges Encountered
 
 1. **Sim-to-Real Gap**
@@ -642,11 +666,7 @@ return FAILURE
    - Covariance spikes when the camera faces featureless walls.
    - **Lesson:** Trajectory planning should avoid orientations that point the camera at blank surfaces.
 
-4. **EC Local Planner — Goal Reachability**
-   - The fixed planning horizon sometimes selected local goals inside obstacles or in dead ends.
-   - **Lesson:** The local-goal selection heuristic needs a feasibility check before committing to A\*.
-
-5. **Resolution vs Narrow Gaps**
+4. **Resolution vs Narrow Gaps**
    - 0.2 m voxel resolution occasionally missed sub-voxel gaps.
    - **Lesson:** Adaptive resolution (coarser in open space, finer near obstacles) would balance speed and precision.
 
@@ -656,20 +676,13 @@ return FAILURE
 
 ### Short-Term
 
-1. **Integral Term in Position Controller**
-   ```python
-   # Eliminate steady-state offset (observed as 0.05 m on hardware)
-   e_integral += (r - r_ref) * dt
-   r_ddot_des = r_ddot_ref - K_d*(v - v_ref) - K_p*(r - r_ref) - K_i*e_integral
-   ```
-
-2. **Curvature-Aware Velocity Profiling**
+1. **Curvature-Aware Velocity Profiling**
    ```python
    # Reduce speed proportionally to local curvature κ
    v_max_local = v_max / (1 + alpha * kappa)
    ```
 
-3. **Better Local-Goal Selection (EC)**
+2. **Better Local-Goal Selection (EC)**
    ```python
    # Ray-march toward global goal; stop at first free voxel
    for t in np.linspace(0, horizon, N):
