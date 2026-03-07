@@ -17,7 +17,7 @@ Planning → Trajectory Generation → SE(3) Control → VIO State Estimation �
 
 <p float="left">
 <img src="Images/quad.png" alt="Main Robot Image" width="45%" />
-  <img src="Images/maze_sim_2.png" alt="Robot in battle Arena" width="42%" />
+  <img src="Images/maze_sim_2.png" alt="Robot in battle Arena" width="35%" />
 </p>
 
 </div>
@@ -173,7 +173,7 @@ The controller was tuned and validated on a real Crazyflie 2.0 quadcopter inside
 <div align="center">
 
 <p float="left">
-<img src="Images/pose_graphs.png" alt="Main Robot Image" width="45%" />
+<img src="Images/pos_graphs.png" alt="Main Robot Image" width="45%" />
   <img src="Images/maze_sim_1.png" alt="Robot in battle Arena" width="42%" />
 </p>
 
@@ -603,7 +603,7 @@ return FAILURE
 <div align="center">
 
 <p float="left">
-<img src="Images/lab_maze.png" alt="Main Robot Image" width="45%" />
+<img src="Images/lab_maze.jpeg" alt="Main Robot Image" width="45%" />
   <img src="Images/pos_vel.png" alt="Robot in battle Arena" width="45%" />
 </p>
 
