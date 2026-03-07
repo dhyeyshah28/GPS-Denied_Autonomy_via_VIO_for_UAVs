@@ -71,15 +71,15 @@ The controller was tuned and validated on a real Crazyflie 2.0 quadcopter inside
 
 ### 🔧 Core Capabilities
 
-- ✅ **A\* Graph Search** on a 3D voxelised occupancy grid with 26-connected neighbours
-- ✅ **Adaptive Safety Margin** that iteratively relaxes from 0.60 m → 0.10 m to guarantee path existence
-- ✅ **Ramer–Douglas–Peucker (RDP) Sparsification** for waypoint reduction
-- ✅ **Cubic Spline Trajectory** with clamped boundary conditions (C² continuity)
-- ✅ **Velocity-Adaptive Time Allocation** based on segment length
-- ✅ **SE(3) Geometric Nonlinear Controller** with decoupled thrust + moment allocation
-- ✅ **VIO State Estimator** fusing stereo features and IMU
-- ✅ **Hardware-Validated** on Crazyflie 2.0 with Vicon ground truth
-- ✅ **Local Replanning** with collision-aware re-routing every 0.1 s
+- **A\* Graph Search** on a 3D voxelised occupancy grid with 26-connected neighbours
+- **Adaptive Safety Margin** that iteratively relaxes from 0.60 m → 0.10 m to guarantee path existence
+- **Ramer–Douglas–Peucker (RDP) Sparsification** for waypoint reduction
+- **Cubic Spline Trajectory** with clamped boundary conditions (C² continuity)
+- **Velocity-Adaptive Time Allocation** based on segment length
+- **SE(3) Geometric Nonlinear Controller** with decoupled thrust + moment allocation
+- **VIO State Estimator** fusing stereo features and IMU
+- **Hardware-Validated** on Crazyflie 2.0 with Vicon ground truth
+- **Local Replanning** with collision-aware re-routing every 0.1 s
 
 ### 🎓 Advanced Techniques
 
@@ -173,7 +173,7 @@ The controller was tuned and validated on a real Crazyflie 2.0 quadcopter inside
 <div align="center">
 
 <p float="left">
-<img src="Images/pos_graphs.png" alt="Main Robot Image" width="38%" />
+<img src="Images/pos_graphs.png" alt="Main Robot Image" width="30%" />
   <img src="Images/maze_sim_1.png" alt="Robot in battle Arena" width="42%" />
 </p>
 
